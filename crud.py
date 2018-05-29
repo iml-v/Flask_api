@@ -42,8 +42,9 @@ def add_user():
 
     db.session.add(new_user)
     db.session.commit()
+    data = user_schema.dump(new_user)
 
-    return jsonify(new_user)
+    return jsonify(data)
 
 
 # endpoint to show all users
